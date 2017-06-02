@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 using namespace std;
 
 struct Node {
@@ -45,14 +46,55 @@ bool searchNodeInBST(Node* root, int data) {
 	}
 }
 
-void printBST(Node* root) {
+void inOrderTraversal(Node* root) {
 	if(root == NULL) {
 		return;
 	}
 
-	printBST(root->left);
+	inOrderTraversal(root->left);
 	cout<<root->data<<"\n";
-	printBST(root->right);
+	inOrderTraversal(root->right);
+}
+
+void preOrderTraversal(Node* root) {
+	if(root == NULL) {
+		return;
+	}
+
+	cout<<root->data<<"\n";
+	preOrderTraversal(root->left);
+	preOrderTraversal(root->right);
+}
+
+void postOrderTraversal(Node* root) {
+	if(root == NULL) {
+		return;
+	}
+
+	postOrderTraversal(root->left);
+	postOrderTraversal(root->right);
+	cout<<root->data<<"\n";
+}
+
+void levelOrderTraversal(Node* root) {
+	if(root == NULL) {
+		return;
+	}
+
+	queue<Node*> q;
+
+	q.push(root);
+
+	while(!q.empty()) {
+		Node* tmp = q.front();
+
+		cout<<tmp->data<<"\n";
+
+		if(tmp->left != NULL) q.push(tmp->left);
+		if(tmp->right != NULL) q.push(tmp->right);
+
+		q.pop();
+	}
 }
 
 int main() {
@@ -67,9 +109,19 @@ int main() {
 	root = insertIntoBST(root, 1);
 	root = insertIntoBST(root, 6);
 
-	//printBST(root);
+	cout<<"Printing level order traversal:"<<"\n";
+	levelOrderTraversal(root);
+	
+	cout<<"Printing in order traversal:"<<"\n";
+	inOrderTraversal(root);
 
-	bool found = searchNodeInBST(root, 5);
+	cout<<"Printing pre order traversal:"<<"\n";
+	preOrderTraversal(root);
 
-	cout<<found;
+	cout<<"Printing post order traversal:"<<"\n";
+	postOrderTraversal(root);
+
+	//bool found = searchNodeInBST(root, 5);
+
+	//cout<<found;
 }
