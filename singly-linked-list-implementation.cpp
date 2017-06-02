@@ -26,30 +26,6 @@ void printLinkedList(Node* head) {
 	cout<<tmpNode->data<<"\n";
 }
 
-Node* removeDuplicates(Node* head) {
-	static int arr[100];
-
-	Node* tmpNode = head;
-	Node* previousNode = NULL;
-
-	while(tmpNode) {
-		int dataOnNode = tmpNode->data;
-
-		if(arr[dataOnNode] == 0) {
-			arr[dataOnNode] = 1;
-
-			previousNode = tmpNode;
-		}
-		else if(arr[dataOnNode] == 1) {
-			previousNode->next = tmpNode->next;
-		}
-		
-		tmpNode = tmpNode->next;
-	}
-
-	return head;
-}
-
 int main ()
 {
 	Node* head = NULL;
@@ -65,10 +41,5 @@ int main ()
 	head = insertNodeAtHead(head, 5);
 	
 	cout<<"Original Linked List: "<<"\n";
-	printLinkedList(head);
-
-	removeDuplicates(head);
-
-	cout<<"Linked list after removing duplicates: "<<"\n";
 	printLinkedList(head);
 }
