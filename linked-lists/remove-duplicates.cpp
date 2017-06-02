@@ -9,12 +9,12 @@ struct Node {
 	Node* next = nullptr;
 };
 
-void insertNodeAtHead(Node** head, int data) {
+Node* insertNodeAtHead(Node* head, int data) {
 	Node* newNode = new Node;
 	newNode->data = data;
-	newNode->next = *head;
+	newNode->next = head;
 
-	*head = newNode;
+	return newNode;
 }
 
 void printLinkedList(Node* head) {
@@ -26,10 +26,10 @@ void printLinkedList(Node* head) {
 	cout<<tmpNode->data<<"\n";
 }
 
-void removeDuplicates(Node** head) {
+Node* removeDuplicates(Node* head) {
 	static int arr[100];
 
-	Node* tmpNode = *head;
+	Node* tmpNode = head;
 	Node* previousNode = NULL;
 
 	while(tmpNode) {
@@ -50,24 +50,22 @@ void removeDuplicates(Node** head) {
 
 int main ()
 {
-	Node* head = new Node;
-	head->data = 0;
-	head->next = NULL;
+	Node* head = NULL;
 
-	insertNodeAtHead(&head, 0);
-	insertNodeAtHead(&head, 1);
-	insertNodeAtHead(&head, 2);
-	insertNodeAtHead(&head, 3);
-	insertNodeAtHead(&head, 4);
-	insertNodeAtHead(&head, 2);
-	insertNodeAtHead(&head, 3);
-	insertNodeAtHead(&head, 4);
-	insertNodeAtHead(&head, 5);
+	head = insertNodeAtHead(head, 0);
+	head = insertNodeAtHead(head, 1);
+	head = insertNodeAtHead(head, 2);
+	head = insertNodeAtHead(head, 3);
+	head = insertNodeAtHead(head, 4);
+	head = insertNodeAtHead(head, 2);
+	head = insertNodeAtHead(head, 3);
+	head = insertNodeAtHead(head, 4);
+	head = insertNodeAtHead(head, 5);
 	
 	cout<<"Original Linked List: "<<"\n";
 	printLinkedList(head);
 
-	removeDuplicates(&head);
+	removeDuplicates(head);
 
 	cout<<"Linked list after removing duplicates: "<<"\n";
 	printLinkedList(head);
