@@ -1,3 +1,6 @@
+//Time complexity is O(n) since we traverse array to find spaces
+//and then do equal number of swaps.
+
 #include <iostream>
 using namespace std;
 
