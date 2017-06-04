@@ -1,5 +1,5 @@
-//Complexity = O(n) or 0(1) if we assume that the function can only iterate
-//255 times at maximum to find out an answer
+//Time Complexity = O(n)
+//Space Complexity = O(1)
 
 #include <iostream>
 using namespace std;
