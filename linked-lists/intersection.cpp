@@ -1,3 +1,8 @@
+//The straightforward solution for this problem would be to store addresses
+//of the first list in a hash table and check if any addresses in the second
+//match any of them. This solution would however have a space complexity of
+//O(n)
+
 //Time Complexity = O(n)
 //Space Complexity = O(1)
 
