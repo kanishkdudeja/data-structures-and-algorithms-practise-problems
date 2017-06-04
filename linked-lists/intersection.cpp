@@ -119,6 +119,8 @@ int main ()
 	secondListHead = insertNodeAtHead(secondListHead, 4);
 	secondListHead = insertNodeAtHead(secondListHead, 5);
 
+	firstListHead->next = secondListHead;
+
 	Node* intersection;
 
 	if(findIntersection(firstListHead, secondListHead, &intersection)) {
