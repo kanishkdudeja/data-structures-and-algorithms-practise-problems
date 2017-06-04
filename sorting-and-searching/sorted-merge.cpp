@@ -13,8 +13,8 @@ void sortedMerge(int* arr1, int arr1Length, int* arr2, int arr2Length, int fullL
 
 	int finalIndex = fullLength - 1;
 
-	while(lastIndex2 >= 0) {
-		if((arr1[lastIndex1] > arr2[lastIndex2]) && (lastIndex1 >= 0)) {
+	while(lastIndex1 >= 0 || lastIndex2 >= 0) {
+		if((arr1[lastIndex1] > arr2[lastIndex2])) {
 			arr1[finalIndex] = arr1[lastIndex1];
 			lastIndex1--;
 		} else if(arr2[lastIndex2] > arr1[lastIndex1]) {
