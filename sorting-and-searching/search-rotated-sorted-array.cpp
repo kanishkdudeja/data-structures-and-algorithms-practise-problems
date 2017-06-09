@@ -9,7 +9,7 @@ Output: 8 (the index of 5 in the array)
 
 */
 
-/* The below algorithm only works 
+/* The below algorithm only works with an array with no duplicates */
 
 /* Time complexity = O(log(n)) */
 /* Space complexity = O(1) */
