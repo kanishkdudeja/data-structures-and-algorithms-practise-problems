@@ -43,24 +43,19 @@ class Queue {
 		if(front == NULL) {
 			return -1;
 		}
-		else if(front == back) {
+		else {
 			int data = front->data;
 			
 			Node* tmp = front;
 
-			front = NULL;
-			back = NULL;
+			if(front == back) {
+				front = NULL;
+				back = NULL;
 
-			free(tmp);
-
-			return data;
-		}
-		else {
-			Node* tmp = front;
-
-			int data = front->data;
-
-			front = front->next;
+			}
+			else {
+				front = front->next;
+			}
 
 			free(tmp);
 
@@ -91,10 +86,12 @@ int main() {
 	q.enqueue(3);
 	q.enqueue(4);
 
+	cout<<"Printing queue: "<<"\n";
 	q.printQueue();
 
 	q.dequeue();
 	q.dequeue();
 
+	cout<<"Printing queue after dequeuing 1 and 2: "<<"\n";
 	q.printQueue();
 }
