@@ -10,7 +10,7 @@ to find the missing number. */
 using namespace std;
 
 int findMissing(int* arr, int n) {
-	int totalSum = (n*(n+1))/2;
+	int totalSum = (n*(n-1))/2;
 
 	int actualSum = 0;
 
@@ -24,7 +24,7 @@ int findMissing(int* arr, int n) {
 }
 
 int main() {
-	int arr[9] = { 1, 2, 3, 5, 6, 7, 8, 9, 10 };
+	int arr[9] = { 0, 1, 2, 3, 5, 6, 7, 8, 9};
 
 	cout<<findMissing(arr, 10);
 }
