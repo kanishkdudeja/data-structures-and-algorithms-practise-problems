@@ -1,3 +1,13 @@
+/* Write a program to detect a loop in the linked list 
+
+Solution: Start traversing each node. Put address of each node into an unordered map (hash table)
+As soon as the same address is found, it means there is a loop in the linked list
+
+Time Complexity = O(n)
+Space Complexity = O(n) since n elements at max will be stored in the hash table
+
+*/
+
 #include <iostream>
 #include <unordered_map>
 using namespace std;
