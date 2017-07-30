@@ -12,6 +12,14 @@ concatenation would take O(n) time */
 using namespace std;
 
 bool isRotation(string s1, string s2) {
+	if(s1.length() != s2.length()) {
+		return false;
+	}
+
+	if(s1 == s2) {
+		return true;
+	}
+
 	string s3 = s1 + s1;
 
 	if(s3.find(s2) != std::string::npos) {
