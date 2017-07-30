@@ -1,6 +1,6 @@
-/* Problem: Given two strings, find out if the second string is a rotation of the first
+/* Problem: Given two strings, find out if the second string is a rotation of the first.
 
-Approach: Concatenate first string with itself and check if second string is a concatenation of the 
+Approach: Concatenate first string with itself and check if second string is a substring of the 
 concatenated string. If yes, then it's a rotation. Otherwise not.
 
 Space Complexity = O(n) since we are saving concatenated length of 2 times first string in memory O(2n)
