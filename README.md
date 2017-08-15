@@ -1,2 +1,3 @@
-# cracking-the-coding-interview-solutions
-My solutions to Cracking the Coding Interview 6th edition (using C++)
+# Introduction
+
+This repository contains solutions to data structure practice and algorithmic problems. 
