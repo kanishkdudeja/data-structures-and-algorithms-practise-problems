@@ -1,3 +1,5 @@
+/* Also called run length encoding */
+
 //Complexity = O(n)
 
 #include <iostream>
