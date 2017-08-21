@@ -1,5 +1,6 @@
 /* Power Set
-Power Set Power set P(S) of a set S is the set of all subsets of S. For example S = {a, b, c} then 
+
+Power set P(S) of a set S is the set of all subsets of S. For example S = {a, b, c} then 
 P(s) = {{}, {a}, {b}, {c}, {a,b}, {a, c}, {b, c}, {a, b, c}}.
 
 We should first have some reasonable expectations of our time and space complexity.
@@ -9,33 +10,42 @@ being in there or not. That is, for the first element, there are two choices: it
 it is not. 
 
 For the second, there are two, etc. So, doing { 2 * 2 * . . . } n times gives us 2" subsets.
+
 Assuming that we're going to be returning a list of subsets, then our best case time is actually the total
 number of elements across all of those subsets. There are 2" subsets and each of the n elements will be
 contained in half of the subsets (which 2 n - 1 subsets). Therefore, the total number of elements across all of
 those subsets is n * 2 n - 1.
-We will not be able to beat 0( n2") in space or time complexity.
+We will not be able to beat 0(n2") in space or time complexity.
+
 The subsets of {a 1 , a 2 ,••• , an} are also called the powersetP({a 1 , a 2 , ••• , an}),or justP(n).
 
 Solution #1: Recursion
+
 This problem is a good candidate for the Base Case and Build approach. Imagine that we are trying to find
-all subsets of a set like S = {a 1, a 2, • • • , a n }. We can start with the Base Case.
+all subsets of a set like S = {a 1, a 2, • • • , a n }.
+
+We can start with the Base Case.
+
 Base Case: n = 0.
+
 There is just one subset of the empty set: {}.
+
 Case:n = 1.
 There are two subsets of the set {aJ: {}, {aJ.
+
 Case:n = 2.
 There are four subsets of the set {a 1 , aJ: {} , {aJ, {a), {a 1 , a 2 }.
+
 Case:n = 3.
 Now here's where things get interesting. We want to find a way of generating the solution for n
 on the prior solutions.
-3 based
-3 and the solution for n = 2? Let's look at this more
-What is the difference between the solution for n
-deeply:
+
 P(2) = {}, {a 1 }, {a 2 }, {a 1 , a 2}
 P(3) = {}, {aJ, {a 2 }, {a 3 }, {a 1 , a 2 }, {a 1 , a 3 }, {a 2, a 3}, {a 1 , a 2 , a 3}
+
 The difference between these solutions is that P ( 2) is missing all the subsets containing a 3•
 P(3) - P(2) = {a 3 }, {a 1 , a 3 }, {a 2 , a 3 }, {a 1 , a 2 , a 3}
+
 How can we use P ( 2) to create P ( 3)? We can simply clone the subsets in P ( 2) and add a 3 to them:
 {} , {a 1}, {a 2}, {a 1, aJ
 P(2)
