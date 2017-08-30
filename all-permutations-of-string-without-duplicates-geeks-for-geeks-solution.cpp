@@ -46,7 +46,7 @@ void printPermutations(char* str, int start, int end) {
 }
 
 int main() {
-	char s[4] = {'a', 'b', 'c'};
+	char s[3] = {'a', 'b', 'c'};
 
 	printPermutations(s, 0, 2);
 }
