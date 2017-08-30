@@ -22,12 +22,18 @@ Note : The above solution prints duplicate permutations if there are repeating c
 #include <iostream>
 using namespace std;
 
+/* Function to swap values at two pointers */
 void swap(char* a, char* b) {
 	char temp = *a;
 	*a = *b;
 	*b = temp;
 }
 
+/* Function to print permutations of string
+   This function takes three parameters:
+   1. String
+   2. Starting index of the string
+   3. Ending index of the string. */
 void printPermutations(char* str, int start, int end) {
 	int i;
 
@@ -40,7 +46,7 @@ void printPermutations(char* str, int start, int end) {
 
 			printPermutations(str, start+1, end);
 
-			swap(str+start, str+i);
+			swap(str+start, str+i); //backtrack
 		}
 	}
 }
