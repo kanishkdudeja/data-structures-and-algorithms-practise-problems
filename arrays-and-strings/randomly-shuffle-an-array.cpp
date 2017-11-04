@@ -6,14 +6,14 @@ Let the given array be arr[]. A simple solution is to create an auxiliary array 
 Randomly select an element from temp[], copy the randomly selected element to arr[0] and remove the selected element from temp[]. 
 Repeat the same process n times and keep copying elements to arr[1], arr[2], … . The time complexity of this solution will be O(n^2).
 
-Another solution for this is: For each element in the array, put the output of rand() (generates an output between 0 and 1) function in an auxilliary array
-of the same size as the original array.
+Another solution for this is: For each element in the array, put the output of rand() (generates an output between 0 and 1) function 
+in an auxilliary array of the same size as the original array.
 Now, sort the elements of the original array in a way that they occur in their increasing amount of rand() value generated above
 Sorting here will require O(nlogn) time and storing an additional auxilliary array will require O(n) space
 
-Fisher–Yates shuffle Algorithm works in O(n) time complexity. The assumption here is, we are given a function rand() that generates random number in O(1) time.
-The idea is to start from the last element, swap it with a randomly selected element from the whole array (including last). Now consider the array 
-from 0 to n-2 (size reduced by 1), and repeat the process till we hit the first element.
+Fisher–Yates shuffle Algorithm works in O(n) time complexity. The assumption here is, we are given a function rand() that generates random number 
+in O(1) time. The idea is to start from the last element, swap it with a randomly selected element from the whole array (including last). 
+Now consider the array from 0 to n-2 (size reduced by 1), and repeat the process till we hit the first element.
 
 Following is the detailed algorithm
 
